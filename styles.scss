@@ -1,0 +1,173 @@
+$base-font: 'Rubik', sans-serif;
+$second-font: 'Tangerine', serif;
+$base-color: #021217;
+$base-color-hover: #fd6002;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 62.5%;
+}
+ul{
+    list-style: none;
+}
+a {
+    color: inherit;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1 {
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+body {
+    background-color: #b9e8f8;
+    font-family: $base-font;
+    font-size: 1.6rem;
+    color: $base-color;
+}
+p {
+    color: rgba($base-color, .7) ;
+    margin: 1rem 0;
+}
+.portfolio-logo{
+    img {
+        background-color: #fd6002;
+        padding: 4px;
+        width: 100px;
+        height: 100px;
+        border-radius: 20%;
+        overflow: hidden;
+        display: inline-block;
+    }
+}
+.sidebar {
+    background-color: #2bb1d4;
+
+    li{               
+        &:first-child {
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            transition: color 0.2s ease-out;
+            color: $base-color;            
+            margin: .5rem 0;            
+            display: inline-flex;
+            align-items: center;
+
+            &:hover{
+                color: $base-color-hover;
+            } 
+                  
+        }
+        i {
+            margin-right: 10px;
+        }
+        a:active {
+            color: $base-color-hover;
+        }
+    }
+}
+.portfolio-logo {    
+    font-size: 2.5rem;
+    text-align: center;
+    figcaption {
+        &::first-letter {
+            font-family: $second-font;
+            font-weight: 700;
+            font-size: 3rem;
+            color: $base-color-hover;
+        }
+    }
+}
+// For Home page
+.portfolio-home {
+    display: flex;
+    .content{
+        padding: 1rem;
+
+        strong {
+            font-family: $second-font;
+        }
+    }
+    .portfolio-banner {
+        margin: 2rem;
+        position: relative;
+        padding: 2rem;
+        max-width: 30%;
+        width: 100%;
+
+        &:before,
+        &:after { 
+            content: '';
+            display: inline-block;
+            width: 5rem;
+            height: 5rem;  
+            position: absolute;            
+        }
+        &:before{
+            border-top: 4px solid $base-color-hover;
+            border-left: 4px solid $base-color-hover;
+            left: 0;
+            top: 0;
+        }
+        &:after {             
+            border-bottom: 4px solid $base-color-hover;
+            border-right: 4px solid $base-color-hover;           
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+@media screen {
+    .sidebar {
+        height: 100vh;
+        width: 100vw;
+        max-width: 100%;
+    }
+    .container {
+        height: 100vh;
+        width: 100vw;
+        max-width: 100%;
+    }
+    .main-section {
+        height: 100vh;
+        width: 100vw;
+        max-width: 100%;
+    }
+}
+@media screen and (min-width: 768px) {
+    
+}
+@media screen and (min-width: 1024px) {
+    .container {
+        display: flex;
+    }
+    .sidebar {
+        max-width: 20%; 
+        padding: 2rem;
+        box-shadow: 0px 2px 3px rgb(20, 162, 209); 
+        li{            
+            &:first-child {
+                display: none;
+            }
+        }      
+    }
+    .main-section {
+        max-width: calc(100% - 20%);
+        overflow: hidden;
+        
+        & > section {
+            padding: 2rem;
+            width: 100%;
+            height: 100%;
+            background-color: #cccccc;
+        }
+    }
+}
